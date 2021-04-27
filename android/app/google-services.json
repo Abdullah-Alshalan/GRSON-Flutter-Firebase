@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "875656399874",
+    "project_id": "grson-86542",
+    "storage_bucket": "grson-86542.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875656399874:android:0609b29f37cbc53208ab1b",
+        "android_client_info": {
+          "package_name": "com.example.argon_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "875656399874-3npl8n94gofouf903p3lmqg2c0f9l68v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfrHqYoFaIFNQWjB-GLx6WlvrNPvq5h1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "875656399874-3npl8n94gofouf903p3lmqg2c0f9l68v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "875656399874-ohemrt6qv6n7d1vrck7v2jdn7m0jgrpg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.argonFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>875656399874-ohemrt6qv6n7d1vrck7v2jdn7m0jgrpg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.875656399874-ohemrt6qv6n7d1vrck7v2jdn7m0jgrpg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCLjO6N0ClAPLTAzV3veyyx468vSNiQCoo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>875656399874</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.argonFlutter</string>
+	<key>PROJECT_ID</key>
+	<string>grson-86542</string>
+	<key>STORAGE_BUCKET</key>
+	<string>grson-86542.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:875656399874:ios:8f5c729de511a5df08ab1b</string>
+</dict>
+</plist>

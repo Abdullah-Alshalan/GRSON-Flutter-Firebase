@@ -1,0 +1,1 @@
+enum SingingCharacter { customer, restaurant }
