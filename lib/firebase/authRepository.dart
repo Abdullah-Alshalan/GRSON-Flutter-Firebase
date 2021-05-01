@@ -4,13 +4,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_storage/get_storage.dart';
 
 class AuthrRepository {
+
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   Future<String> signIn(String email, String password) async {
     UserCredential result =
         await auth.signInWithEmailAndPassword(email: email, password: password);
-    getUserForAuthCheck();
+    await getUserForAuthCheck();
     return "Signed In";
   }
 
@@ -39,7 +40,7 @@ class AuthrRepository {
             photoURL:
                 "https://firebasestorage.googleapis.com/v0/b/grson-86542.appspot.com/o/images%2F5e72e4.png?alt=media&token=fb5efea4-0f42-4fc0-b060-f8e2039de0d1");
       });
-      getUserForAuthCheck();
+      await getUserForAuthCheck();
       return "user signUp";
     } catch (e) {
       return e.toString();

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
+import 'package:intl/intl.dart';
 import 'TakeAwayCart.dart';
 
 class OrderManager {
@@ -9,12 +9,15 @@ class OrderManager {
 
   Future<String> createOrderDetail(documentID, newDocId, docId) async {
     try {
+      DateTime now = DateTime.now();
+      String formattedDate = DateFormat('yyyy-MM-dd').format(now);
       final User user = auth.currentUser;
       Map<String, dynamic> orderData = {
         "customerName": auth.currentUser.displayName,
         "status": 'Waiting',
         "userId": auth.currentUser.uid,
-        "docId": docId
+        "docId": docId,
+        "Date&Time": formattedDate,
       };
       final orderDataRef = FirebaseFirestore.instance
           .collection('restaurant')

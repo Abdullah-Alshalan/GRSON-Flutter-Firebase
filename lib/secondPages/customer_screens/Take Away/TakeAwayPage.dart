@@ -173,18 +173,18 @@ class _TakeAwayPage extends State<TakeAwayPage> {
               right: 20,
             ),
           ),
-          // Expanded(
-          //     flex: 2,
-          //     child: Container(
-          //         height: 50,
-          //         child: ElevatedButton(
-          //           onPressed: () {
-          //             Navigator.pushReplacementNamed(context, '/home');
-          //           },
-          //           child: Text(
-          //             'Shopping Cart',
-          //           ),
-          //         ))),
+          Expanded(
+              flex: 2,
+              child: Container(
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/home');
+                    },
+                    child: Text(
+                      'Shopping Cart',
+                    ),
+                  ))),
           Padding(
             padding: EdgeInsets.only(
               right: 20,

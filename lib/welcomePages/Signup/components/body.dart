@@ -171,9 +171,14 @@ class _MyBody extends State<Body> {
           );
         }
       }
-      else
-        print("problem");
     } on PlatformException catch (e) {
+      Get.snackbar(
+        "Warning",
+        e.message,
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+      );
     }
   }
 }

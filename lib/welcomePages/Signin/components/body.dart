@@ -94,18 +94,9 @@ class _MyBody extends State<Body> {
               text: "SIGN IN",
               press: () {
                 signIn(context);
-                // if (temp == SingingCharacter.customer)
-                //   Navigator.pushReplacementNamed(context, '/home');
-                // else
-                //   Navigator.pushReplacementNamed(context, "Restaurant");
               },
             ),
             SizedBox(height: size.height * 0.02),
-            // FirgetPassword(
-            //   press: () {
-            //     Navigator.pushReplacementNamed(context, 'Forgot Password');
-            //   },
-            // ),
             SizedBox(height: size.height * 0.01),
             AlreadyHaveAnAccountCheck(
               press: () {

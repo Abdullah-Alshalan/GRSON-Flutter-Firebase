@@ -39,51 +39,86 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   MyApp({this.currentUserRole});
-
   String currentUserRole;
-
   @override
   Widget build(BuildContext context) {
     print(currentUserRole);
-    return GetMaterialApp(
-        title: 'GRSON',
-        theme: ThemeData(
-            fontFamily: 'OpenSans',
-            primaryColor: kPrimaryColor,
-            scaffoldBackgroundColor: Colors.white),
-        home: FirebaseAuth.instance.currentUser == null
-            ? WelcomeScreen()
-            : currentUserRole == 'SingingCharacter.restaurant'
-                ? RHome()
-                : CHome(),
-        debugShowCheckedModeBanner: false,
-        routes: <String, WidgetBuilder>{
-          //SecondPages
-          "/home": (BuildContext context) => new CHome(),
-          "Restaurant": (BuildContext context) => new RHome(),
-          "Restaurant page": (BuildContext context) => new RestaurantPage(),
-          "Queue add": (BuildContext context) => new QueueAdd(),
-          "Queue acc": (BuildContext context) => new QueueAccepet(),
-          "Take Away acc": (BuildContext context) => new TakeAwayAccepet(),
-          "Add item": (BuildContext context) => new AddItem(),
-          "/profile": (BuildContext context) => new Profile(),
-          "/editprofile": (BuildContext context) => new CEditProfile(),
-          "/editprofile2": (BuildContext context) => new REditProfile(),
-          "resprofile": (BuildContext context) => new ResProfile(),
-          "Queue page user side": (BuildContext context) => new QueuePage(),
-          "Take Away page user side": (BuildContext context) =>
-              new TakeAwayPage(),
-          "V home": (BuildContext context) => new VHome(),
-          //WelcomePages
-          "WelcomePage": (BuildContext context) => new WelcomeScreen(),
-          "Sign Up": (BuildContext context) => new SignUpScreen(),
-          'Sign In': (BuildContext context) => new LoginScreen(),
-          'Forgot Password': (BuildContext context) => new ForgotPassword(),
-          'validation': (BuildContext context) => new VerifyEmail(),
-          'queueAcceptDetails': (BuildContext context) =>
-              new queueAcceptDetails(),
-          'passValidation': (BuildContext context) =>
-              new VerifyEmailForPassword(),
-        });
+    if (FirebaseAuth.instance.currentUser?.uid == null) {
+      return GetMaterialApp(
+          title: 'GRSON',
+          theme: ThemeData(
+              fontFamily: 'OpenSans',
+              primaryColor: kPrimaryColor,
+              scaffoldBackgroundColor: Colors.white),
+          home: WelcomeScreen(),
+          debugShowCheckedModeBanner: false,
+          routes: <String, WidgetBuilder>{
+            //SecondPages
+            "/home": (BuildContext context) => new CHome(),
+            "Restaurant": (BuildContext context) => new RHome(),
+            "Restaurant page": (BuildContext context) => new RestaurantPage(),
+            "Queue add": (BuildContext context) => new QueueAdd(),
+            "Queue acc": (BuildContext context) => new QueueAccepet(),
+            "Take Away acc": (BuildContext context) => new TakeAwayAccepet(),
+            "Add item": (BuildContext context) => new AddItem(),
+            "/profile": (BuildContext context) => new Profile(),
+            "/editprofile": (BuildContext context) => new CEditProfile(),
+            "/editprofile2": (BuildContext context) => new REditProfile(),
+            "resprofile": (BuildContext context) => new ResProfile(),
+            "Queue page user side": (BuildContext context) => new QueuePage(),
+            "Take Away page user side": (BuildContext context) =>
+                new TakeAwayPage(),
+            "V home": (BuildContext context) => new VHome(),
+            //WelcomePages
+            "WelcomePage": (BuildContext context) => new WelcomeScreen(),
+            "Sign Up": (BuildContext context) => new SignUpScreen(),
+            'Sign In': (BuildContext context) => new LoginScreen(),
+            'Forgot Password': (BuildContext context) => new ForgotPassword(),
+            'validation': (BuildContext context) => new VerifyEmail(),
+            'queueAcceptDetails': (BuildContext context) =>
+                new queueAcceptDetails(),
+            'passValidation': (BuildContext context) =>
+                new VerifyEmailForPassword(),
+          });
+    } else {
+      return GetMaterialApp(
+          title: 'GRSON',
+          theme: ThemeData(
+              fontFamily: 'OpenSans',
+              primaryColor: kPrimaryColor,
+              scaffoldBackgroundColor: Colors.white),
+          home: currentUserRole == 'SingingCharacter.restaurant'
+              ? RHome()
+              : CHome(),
+          debugShowCheckedModeBanner: false,
+          routes: <String, WidgetBuilder>{
+            //SecondPages
+            "/home": (BuildContext context) => new CHome(),
+            "Restaurant": (BuildContext context) => new RHome(),
+            "Restaurant page": (BuildContext context) => new RestaurantPage(),
+            "Queue add": (BuildContext context) => new QueueAdd(),
+            "Queue acc": (BuildContext context) => new QueueAccepet(),
+            "Take Away acc": (BuildContext context) => new TakeAwayAccepet(),
+            "Add item": (BuildContext context) => new AddItem(),
+            "/profile": (BuildContext context) => new Profile(),
+            "/editprofile": (BuildContext context) => new CEditProfile(),
+            "/editprofile2": (BuildContext context) => new REditProfile(),
+            "resprofile": (BuildContext context) => new ResProfile(),
+            "Queue page user side": (BuildContext context) => new QueuePage(),
+            "Take Away page user side": (BuildContext context) =>
+                new TakeAwayPage(),
+            "V home": (BuildContext context) => new VHome(),
+            //WelcomePages
+            "WelcomePage": (BuildContext context) => new WelcomeScreen(),
+            "Sign Up": (BuildContext context) => new SignUpScreen(),
+            'Sign In': (BuildContext context) => new LoginScreen(),
+            'Forgot Password': (BuildContext context) => new ForgotPassword(),
+            'validation': (BuildContext context) => new VerifyEmail(),
+            'queueAcceptDetails': (BuildContext context) =>
+                new queueAcceptDetails(),
+            'passValidation': (BuildContext context) =>
+                new VerifyEmailForPassword(),
+          });
+    }
   }
 }

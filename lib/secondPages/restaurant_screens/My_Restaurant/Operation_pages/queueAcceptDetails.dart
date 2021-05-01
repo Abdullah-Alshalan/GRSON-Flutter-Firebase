@@ -20,7 +20,9 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
   final acceptedQueData = {
     "title": "Hurray!! Your order is  Accepted.",
   };
-
+  final declineTAKData = {
+    "title": "Sorry!! Your order is decline.",
+  };
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,112 +76,135 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
                                           child: CircularProgressIndicator(),
                                         );
                                       }
-                                      return ListView(
-                                        reverse: true,
-                                          shrinkWrap: true,
+                                      return Column(
                                           children: snapshot.data.docs
                                               .map((document) {
-                                        return Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Container(
-                                              padding: const EdgeInsets.only(
-                                                  left: 8.0, top: 8, bottom: 8),
-                                              child: InkWell(
-                                                onTap: () {
-                                                  Navigator.pushReplacementNamed(
-                                                      context,
-                                                      '/queueAcceptDetails');
-                                                },
-                                                child: Row(
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.all(
-                                                              8.0),
-                                                      child: Text(document[
-                                                          'customerName']),
-                                                    ),
-                                                    SizedBox(
-                                                      width:
-                                                          MediaQuery.of(context)
-                                                                  .size
-                                                                  .width *
-                                                              0.25,
-                                                    ),
-                                                    Flexible(
-                                                      child: TextButton(
-                                                          child: Text(
-                                                              "Accepet Next"
-                                                                  .toUpperCase(),
-                                                              style: TextStyle(
-                                                                  fontSize: 14)),
-                                                          style: ButtonStyle(
-                                                              padding:
-                                                                  MaterialStateProperty.all<EdgeInsets>(
+                                            return Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Container(
+                                                  padding:
+                                                  const EdgeInsets.only(
+                                                      left: 8.0,
+                                                      top: 8,
+                                                      bottom: 8),
+                                                  child: InkWell(
+                                                    onTap: () {
+                                                      Navigator
+                                                          .pushReplacementNamed(
+                                                          context,
+                                                          '/queueAcceptDetails');
+                                                    },
+                                                    child: Row(
+                                                      children: [
+                                                        Expanded(
+                                                          flex: 3,
+                                                          child: Padding(
+                                                            padding:
+                                                            const EdgeInsets
+                                                                .all(8.0),
+                                                            child: Text(document[
+                                                            'customerName']),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          flex: 1,
+                                                          child: SizedBox(
+                                                            width: MediaQuery.of(
+                                                                context)
+                                                                .size
+                                                                .width *
+                                                                0.20,
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          flex: 4,
+                                                          child: TextButton(
+                                                              child: Text(
+                                                                  "Accepet Next"
+                                                                      .toUpperCase(),
+                                                                  style: TextStyle(
+                                                                      fontSize:
+                                                                      14)),
+                                                              style:
+                                                              ButtonStyle(
+                                                                  padding: MaterialStateProperty.all<
+                                                                      EdgeInsets>(
                                                                       EdgeInsets.all(
                                                                           15)),
-                                                              foregroundColor:
-                                                                  MaterialStateProperty.all<Color>(
-                                                                      Colors
-                                                                          .green),
-                                                              shape: MaterialStateProperty.all<
+                                                                  foregroundColor:
+                                                                  MaterialStateProperty.all<Color>(Colors
+                                                                      .green),
+                                                                  shape: MaterialStateProperty.all<
                                                                       RoundedRectangleBorder>(
-                                                                  RoundedRectangleBorder(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            18.0),
-                                                              ))),
-                                                          onPressed: () {
-                                                            _queUpOrderManager
-                                                                .updateOrder(
-                                                                    widget.docId,
+                                                                      RoundedRectangleBorder(
+                                                                        borderRadius:
+                                                                        BorderRadius.circular(18.0),
+                                                                      ))),
+                                                              onPressed: () {
+                                                                _queUpOrderManager.updateOrder(
+                                                                    widget
+                                                                        .docId,
                                                                     myDoc,
                                                                     document.id,
                                                                     'Accepet');
-                                                            getRestaurant(
-                                                                document[
+                                                                getRestaurant(
+                                                                    document[
                                                                     'userId'],
-                                                                acceptedQueData);
-                                                          }),
+                                                                    acceptedQueData);
+                                                              }),
+                                                        ),
+
+                                                        Expanded(
+                                                          flex: 3,
+                                                          child: TextButton(
+                                                              child: Text(
+                                                                  "Decline"
+                                                                      .toUpperCase(),
+                                                                  style: TextStyle(
+                                                                      fontSize:
+                                                                      14)),
+                                                              style:
+                                                              ButtonStyle(
+                                                                  padding: MaterialStateProperty.all<
+                                                                      EdgeInsets>(
+                                                                      EdgeInsets.all(
+                                                                          15)),
+                                                                  foregroundColor:
+                                                                  MaterialStateProperty.all<Color>(Colors
+                                                                      .red),
+                                                                  shape: MaterialStateProperty.all<
+                                                                      RoundedRectangleBorder>(
+                                                                      RoundedRectangleBorder(
+                                                                        borderRadius:
+                                                                        BorderRadius.circular(18.0),
+                                                                      ))),
+                                                              onPressed: () {
+                                                                _queUpOrderManager.updateOrder(
+                                                                    widget
+                                                                        .docId,
+                                                                    myDoc,
+                                                                    document.id,
+                                                                    'Decline');
+                                                                getRestaurant(
+                                                                    document[
+                                                                    'userId'],
+                                                                    declineTAKData);
+                                                              }),
+                                                        ),
+                                                      ],
                                                     ),
-                                                    // TextButton(
-                                                    //     child: Text(
-                                                    //         "Decline ".toUpperCase(),
-                                                    //         style: TextStyle(fontSize: 14)),
-                                                    //     style: ButtonStyle(
-                                                    //         padding: MaterialStateProperty
-                                                    //             .all<EdgeInsets>(
-                                                    //             EdgeInsets.all(15)),
-                                                    //         foregroundColor:
-                                                    //         MaterialStateProperty.all<
-                                                    //             Color>(
-                                                    //             ArgonColors.error),
-                                                    //         shape: MaterialStateProperty.all<
-                                                    //             RoundedRectangleBorder>(
-                                                    //             RoundedRectangleBorder(
-                                                    //               borderRadius:
-                                                    //               BorderRadius.circular(
-                                                    //                   18.0),
-                                                    //             ))),
-                                                    //     onPressed: () {
-                                                    //       // _queUpOrderManager.updateOrder(firstDocId, document.id ,
-                                                    //       //     'Decline');
-                                                    //       // getRestaurant(document['userId'], declineQueData);
-                                                    //     }),
-                                                  ],
+                                                  ),
                                                 ),
-                                              ),
-                                            ),
-                                            ItemDivider(),
-                                          ],
-                                        );
-                                      }).toList());
+                                                ItemDivider(),
+                                              ],
+                                            );
+                                          }).toList());
                                     });
                               }).toList(),
                             );
                           }),
+
                     ],
                   )),
             ),
@@ -192,7 +217,8 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
       leading: IconButton(
         icon: Icon(Icons.arrow_back_ios, size: 25),
         onPressed: () {
-          Navigator.pushReplacementNamed(context, "Restaurant");
+          Navigator.pop(context);
+          Navigator.pushReplacementNamed(context, "Queue acc");
         },
       ),
       title: Text(
@@ -203,3 +229,4 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
     );
   }
 }
+

@@ -63,11 +63,13 @@ class CHome extends StatelessWidget {
           width: 55,
           child: Icon(Icons.search, size: 25),
         ),
-        // Container(
-        //   width: 55,
-        //   child: IconButton(icon: Icon(Icons.notifications_none_outlined, size: 25), onPressed: ()  {
-        //   }),
-        // ),
+        Container(
+          width: 55,
+          child: IconButton(icon: Icon(Icons.notifications_none_outlined, size: 25), onPressed: ()  async {
+            final UserData = await box.read('UserRole');
+            print(UserData);
+          }),
+        ),
       ],
       title: Text(
         "Custumer's page",
