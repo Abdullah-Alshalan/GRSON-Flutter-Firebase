@@ -18,11 +18,11 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
   final queUpOrderManager _queUpOrderManager = new queUpOrderManager();
   final FirebaseAuth auth = FirebaseAuth.instance;
   final acceptedQueData = {
-    "title": "Hurray!! Your order is  Accepted.",
+    "title": "You are next in line.",
   };
-  final declineTAKData = {
-    "title": "Sorry!! Your order is decline.",
-  };
+  // final declineTAKData = {
+  //   "title": "Sorry!! Your order is decline.",
+  // };
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,16 +86,16 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
                                               children: [
                                                 Container(
                                                   padding:
-                                                  const EdgeInsets.only(
-                                                      left: 8.0,
-                                                      top: 8,
-                                                      bottom: 8),
+                                                      const EdgeInsets.only(
+                                                          left: 8.0,
+                                                          top: 8,
+                                                          bottom: 8),
                                                   child: InkWell(
                                                     onTap: () {
                                                       Navigator
                                                           .pushReplacementNamed(
-                                                          context,
-                                                          '/queueAcceptDetails');
+                                                              context,
+                                                              '/queueAcceptDetails');
                                                     },
                                                     child: Row(
                                                       children: [
@@ -103,19 +103,19 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
                                                           flex: 3,
                                                           child: Padding(
                                                             padding:
-                                                            const EdgeInsets
-                                                                .all(8.0),
+                                                                const EdgeInsets
+                                                                    .all(8.0),
                                                             child: Text(document[
-                                                            'customerName']),
+                                                                'customerName']),
                                                           ),
                                                         ),
                                                         Expanded(
                                                           flex: 1,
                                                           child: SizedBox(
                                                             width: MediaQuery.of(
-                                                                context)
-                                                                .size
-                                                                .width *
+                                                                        context)
+                                                                    .size
+                                                                    .width *
                                                                 0.20,
                                                           ),
                                                         ),
@@ -127,21 +127,21 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
                                                                       .toUpperCase(),
                                                                   style: TextStyle(
                                                                       fontSize:
-                                                                      14)),
+                                                                          14)),
                                                               style:
-                                                              ButtonStyle(
-                                                                  padding: MaterialStateProperty.all<
-                                                                      EdgeInsets>(
-                                                                      EdgeInsets.all(
-                                                                          15)),
-                                                                  foregroundColor:
-                                                                  MaterialStateProperty.all<Color>(Colors
-                                                                      .green),
-                                                                  shape: MaterialStateProperty.all<
-                                                                      RoundedRectangleBorder>(
-                                                                      RoundedRectangleBorder(
+                                                                  ButtonStyle(
+                                                                      padding: MaterialStateProperty.all<
+                                                                              EdgeInsets>(
+                                                                          EdgeInsets.all(
+                                                                              15)),
+                                                                      foregroundColor:
+                                                                          MaterialStateProperty.all<Color>(Colors
+                                                                              .green),
+                                                                      shape: MaterialStateProperty.all<
+                                                                              RoundedRectangleBorder>(
+                                                                          RoundedRectangleBorder(
                                                                         borderRadius:
-                                                                        BorderRadius.circular(18.0),
+                                                                            BorderRadius.circular(18.0),
                                                                       ))),
                                                               onPressed: () {
                                                                 _queUpOrderManager.updateOrder(
@@ -152,48 +152,48 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
                                                                     'Accepet');
                                                                 getRestaurant(
                                                                     document[
-                                                                    'userId'],
+                                                                        'userId'],
                                                                     acceptedQueData);
                                                               }),
                                                         ),
 
-                                                        Expanded(
-                                                          flex: 3,
-                                                          child: TextButton(
-                                                              child: Text(
-                                                                  "Decline"
-                                                                      .toUpperCase(),
-                                                                  style: TextStyle(
-                                                                      fontSize:
-                                                                      14)),
-                                                              style:
-                                                              ButtonStyle(
-                                                                  padding: MaterialStateProperty.all<
-                                                                      EdgeInsets>(
-                                                                      EdgeInsets.all(
-                                                                          15)),
-                                                                  foregroundColor:
-                                                                  MaterialStateProperty.all<Color>(Colors
-                                                                      .red),
-                                                                  shape: MaterialStateProperty.all<
-                                                                      RoundedRectangleBorder>(
-                                                                      RoundedRectangleBorder(
-                                                                        borderRadius:
-                                                                        BorderRadius.circular(18.0),
-                                                                      ))),
-                                                              onPressed: () {
-                                                                _queUpOrderManager.updateOrder(
-                                                                    widget
-                                                                        .docId,
-                                                                    myDoc,
-                                                                    document.id,
-                                                                    'Decline');
-                                                                getRestaurant(
-                                                                    document[
-                                                                    'userId'],
-                                                                    declineTAKData);
-                                                              }),
-                                                        ),
+                                                        // Expanded(
+                                                        //   flex: 3,
+                                                        //   child: TextButton(
+                                                        //       child: Text(
+                                                        //           "Decline"
+                                                        //               .toUpperCase(),
+                                                        //           style: TextStyle(
+                                                        //               fontSize:
+                                                        //               14)),
+                                                        //       style:
+                                                        //       ButtonStyle(
+                                                        //           padding: MaterialStateProperty.all<
+                                                        //               EdgeInsets>(
+                                                        //               EdgeInsets.all(
+                                                        //                   15)),
+                                                        //           foregroundColor:
+                                                        //           MaterialStateProperty.all<Color>(Colors
+                                                        //               .red),
+                                                        //           shape: MaterialStateProperty.all<
+                                                        //               RoundedRectangleBorder>(
+                                                        //               RoundedRectangleBorder(
+                                                        //                 borderRadius:
+                                                        //                 BorderRadius.circular(18.0),
+                                                        //               ))),
+                                                        //       onPressed: () {
+                                                        //         _queUpOrderManager.updateOrder(
+                                                        //             widget
+                                                        //                 .docId,
+                                                        //             myDoc,
+                                                        //             document.id,
+                                                        //             'Decline');
+                                                        //         getRestaurant(
+                                                        //             document[
+                                                        //             'userId'],
+                                                        //             declineTAKData);
+                                                        //       }),
+                                                        // ),
                                                       ],
                                                     ),
                                                   ),
@@ -206,7 +206,6 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
                               }).toList(),
                             );
                           }),
-
                     ],
                   )),
             ),
@@ -231,4 +230,3 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
     );
   }
 }
-
