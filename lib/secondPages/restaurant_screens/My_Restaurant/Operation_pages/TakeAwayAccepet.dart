@@ -13,10 +13,10 @@ class TakeAwayAccepet extends StatefulWidget {
 class _MyBody extends State<TakeAwayAccepet> {
   final OrderManager _orderManager = new OrderManager();
   final acceptedTAKData = {
-    "title": "Hurray!! Your order is  Accepted.",
+    "title": "Your order is Accepted.",
   };
   final declineTAKData = {
-    "title": "Sorry!! Your order is decline.",
+    "title": "Sorry, Your order is declined.",
   };
 
   Widget build(BuildContext context) {

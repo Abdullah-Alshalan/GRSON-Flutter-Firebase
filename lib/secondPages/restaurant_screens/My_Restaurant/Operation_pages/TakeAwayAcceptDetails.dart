@@ -15,7 +15,7 @@ class TakeAwayAcceptDetails extends StatefulWidget {
 class _TakeAwayAcceptDetailsState extends State<TakeAwayAcceptDetails> {
   final OrderManager _orderManager = new OrderManager();
   final acceptedTAKData = {
-    "title": "Your order is  Accepted.",
+    "title": "Your order is Accepted.",
   };
 
   Widget build(BuildContext context) {
