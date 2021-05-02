@@ -9,15 +9,12 @@ class OrderManager {
 
   Future<String> createOrderDetail(documentID, newDocId, docId) async {
     try {
-      DateTime now = DateTime.now();
-      String formattedDate = DateFormat('yyyy-MM-dd').format(now);
       final User user = auth.currentUser;
       Map<String, dynamic> orderData = {
         "customerName": auth.currentUser.displayName,
         "status": 'Waiting',
         "userId": auth.currentUser.uid,
         "docId": docId,
-        "Date&Time": formattedDate,
       };
       final orderDataRef = FirebaseFirestore.instance
           .collection('restaurant')

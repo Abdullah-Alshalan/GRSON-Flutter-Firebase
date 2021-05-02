@@ -76,7 +76,9 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
                                           child: CircularProgressIndicator(),
                                         );
                                       }
-                                      return Column(
+                                      return ListView(
+                                          shrinkWrap: true,
+                                          reverse: true,
                                           children: snapshot.data.docs
                                               .map((document) {
                                             return Column(
