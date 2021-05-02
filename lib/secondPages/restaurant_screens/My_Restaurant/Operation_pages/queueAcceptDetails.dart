@@ -123,7 +123,7 @@ class _queueAcceptDetailsState extends State<queueAcceptDetails> {
                                                           flex: 4,
                                                           child: TextButton(
                                                               child: Text(
-                                                                  "Accepet Next"
+                                                                  "Accepet"
                                                                       .toUpperCase(),
                                                                   style: TextStyle(
                                                                       fontSize:

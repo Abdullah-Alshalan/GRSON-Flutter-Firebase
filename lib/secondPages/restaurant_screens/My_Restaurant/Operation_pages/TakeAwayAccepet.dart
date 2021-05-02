@@ -91,7 +91,7 @@ class _MyBody extends State<TakeAwayAccepet> {
                                           flex: 4,
                                           child: TextButton(
                                               child: Text(
-                                                  "Accepet Next".toUpperCase(),
+                                                  "Accepet".toUpperCase(),
                                                   style:
                                                       TextStyle(fontSize: 14)),
                                               style: ButtonStyle(
