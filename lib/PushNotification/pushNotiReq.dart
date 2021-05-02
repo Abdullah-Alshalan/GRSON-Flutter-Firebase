@@ -3,13 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
 
-
 Future getRestaurant(userId, message) async {
   try {
     FirebaseAuth _auth = FirebaseAuth.instance;
-    final DocumentSnapshot getDeviceToken = await FirebaseFirestore.instance
-        .collection('user')
-        .doc(userId).get();
+    final DocumentSnapshot getDeviceToken =
+        await FirebaseFirestore.instance.collection('user').doc(userId).get();
     String deviceId = getDeviceToken.data()['device_id'];
     sendPushNotifications(deviceId, message);
     return deviceId;
@@ -24,11 +22,9 @@ Future getRestaurant(userId, message) async {
 
 Future<bool> sendPushNotifications(deviceId, message) async {
   var url = Uri.parse('https://fcm.googleapis.com/fcm/send');
-  var key = 'AAAAy-EwTAI:APA91bGaXUc6OIfsu1XaFk0l7-FSnlqjYKPXovjCaLLN_qtBktiEoCPQVQlDTNs9wMwTk7bbZ8xXJoA1LqEMVRApUgwnuWQ5VdQkJl3Gahp12rD713pD1TWYxYYk-2k9vdO4GRIPOGVF';
-  final data = {
-    "notification": message,
-    "to": deviceId
-  };
+  var key =
+      'AAAAy-EwTAI:APA91bGaXUc6OIfsu1XaFk0l7-FSnlqjYKPXovjCaLLN_qtBktiEoCPQVQlDTNs9wMwTk7bbZ8xXJoA1LqEMVRApUgwnuWQ5VdQkJl3Gahp12rD713pD1TWYxYYk-2k9vdO4GRIPOGVF';
+  final data = {"notification": message, "to": deviceId};
   Map<String, String> headers = {
     'Content-Type': 'application/json',
     'Authorization': 'key=' + key,
